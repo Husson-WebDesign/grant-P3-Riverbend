@@ -1,1 +1,471 @@
+/* =========================
+   Global Styles
+========================= */
 
+
+:root {
+    --primary-color: #1B4B6E;
+    --secondary-color: #4A9B9B;
+    --accent-color: #E8A94C;
+    --background-color: #fef7ea;
+    --text-color: #222222;
+}
+
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+}
+
+section {
+  padding: 70px 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================
+   Navigation
+========================= */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+#logo {
+  max-width: 250px;
+  display: block;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+nav ul li a {
+  display: block;
+  color: var(--background-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+nav ul li a.button {
+  margin-top: 0;
+  padding: 10px 16px;
+}
+
+    @media (max-width: 700px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .nav { width: 100%; }
+      .nav ul {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav a {
+        border-radius: 12px;
+        background: #f0f4fb;
+      }
+      .nav .cta {
+        text-align: center;
+      }
+    }
+
+/* =========================
+   Hero
+========================= */
+#home {
+  padding: 0;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.hero-image-about {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('MusicTogether.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.hero-image-lessons {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('TeachingPiano.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.hero-image-instructors {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('instructor.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 150px;
+  color: white;
+}
+
+.button { 
+  display: inline-block; 
+  margin-top: 14px; 
+  background: var(--accent-color); 
+  color: var(--text-color); 
+  text-decoration: none; 
+  font-weight: 800; 
+  padding: 12px 18px; 
+  border-radius: 8px; 
+}
+
+.button:hover { 
+  background: var(--secondary-color);  
+  color: var(--background-color);
+}
+
+.text-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   Main Content
+========================= */
+
+.lessons-grid, .info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 5%;
+}
+
+.lesson-card, .info-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
+  border-top: 5px solid var(--primary-color);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lesson-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 26px 28px;
+  text-align: center;
+}
+
+.lesson-card-content h3, .info-card-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.lesson-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.lesson-tags span {
+  font-size: 0.78rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(27, 75, 110, 0.28);
+  color: var(--primary-color);
+}
+
+.lesson-card-content p {
+  text-align: left;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.lesson-card-content ul {
+  list-style: none;
+  text-align: left;
+  columns: 2;
+  column-gap: 18px;
+  margin-bottom: 14px;
+}
+
+.lesson-card-content ul li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  break-inside: avoid;
+}
+
+.lesson-card-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+}
+
+
+
+#lessons {
+  background-color: var(--primary-color);
+  color: #fef7ea;
+}
+
+.lesson-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.lesson-intro .eyebrow {
+  color: var(--accent-color);
+}
+
+.lesson-cards, .instructor-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.lesson-card, .instructor-card {
+  color: #222222;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.lesson-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.instructor-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  margin: 25px auto 0;
+}
+
+.lesson-card-content {
+  padding: 20px;
+}
+
+.contact {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.contact-main {
+  flex: 1;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-main h2,
+.contact-main h3 {
+  margin-bottom: 8px;
+}
+
+.contact-main a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.contact-appointment {
+  flex: 2;
+}
+
+.contact-appointment ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.contact-appointment li {
+  margin-bottom: 6px;
+}
+
+
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 50px;
+}
+
+article, .card, .lessons-cards {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 5%;
+}
+
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
+  border-top: 5px solid var(--primary-color);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lesson-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 26px 28px;
+  text-align: center;
+}
+
+.lesson-card-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.lesson-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.lesson-tags span {
+  font-size: 0.78rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(27, 75, 110, 0.28);
+  color: var(--primary-color);
+}
+
+.lesson-card-content p {
+  text-align: left;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.lesson-card-content ul {
+  list-style: none;
+  text-align: left;
+  columns: 2;
+  column-gap: 18px;
+  margin-bottom: 14px;
+}
+
+.lesson-card-content ul li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  break-inside: avoid;
+}
+
+.lesson-card-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
