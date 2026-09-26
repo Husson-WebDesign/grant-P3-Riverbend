@@ -189,7 +189,7 @@ nav ul li a.button {
    Main Content
 ========================= */
 
-.lessons-grid, .info-cards {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
@@ -198,18 +198,15 @@ nav ul li a.button {
   padding: 0 5%;
 }
 
-.lesson-card, .info-card {
+.info-card {
   display: flex;
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
-  border-top: 5px solid var(--primary-color);
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.lesson-card-content {
+.info-card-content {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -217,12 +214,12 @@ nav ul li a.button {
   text-align: center;
 }
 
-.lesson-card-content h3, .info-card-content h3 {
+.info-card-content h3, .info-card-content h3 {
   color: var(--primary-color);
   margin-bottom: 12px;
 }
 
-.lesson-tags {
+.info-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -230,7 +227,7 @@ nav ul li a.button {
   margin-bottom: 16px;
 }
 
-.lesson-tags span {
+.info-tags span {
   font-size: 0.78rem;
   padding: 4px 12px;
   border-radius: 20px;
@@ -238,13 +235,13 @@ nav ul li a.button {
   color: var(--primary-color);
 }
 
-.lesson-card-content p {
+.info-card-content p {
   text-align: left;
   font-size: 0.95rem;
   margin-bottom: 14px;
 }
 
-.lesson-card-content ul {
+.info-card-content ul {
   list-style: none;
   text-align: left;
   columns: 2;
@@ -252,7 +249,7 @@ nav ul li a.button {
   margin-bottom: 14px;
 }
 
-.lesson-card-content ul li {
+.info-card-content ul li {
   position: relative;
   padding-left: 18px;
   font-size: 0.9rem;
@@ -260,7 +257,7 @@ nav ul li a.button {
   break-inside: avoid;
 }
 
-.lesson-card-content ul li::before {
+.info-card-content ul li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -392,8 +389,6 @@ article, .card, .lessons-cards {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
-  border-top: 5px solid var(--primary-color);
-  overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
