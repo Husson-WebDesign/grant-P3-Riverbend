@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Riverbend Music Academy</title>
+</head>
+
+<body>
+    <header>
+
+        <nav>
+           <img src="images/logo.png" id="logo"> 
+            <ul> 
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="lessons.html">Lessons</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a class="button" href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <p>Interested in lessons? Call, email, or send us the form below.</p>
+        </div>
+ 
+        <div class="contact-page">
+ 
+            <!-- Academy info -->
+            <aside class="contact-info">
+                <h2>Riverbend Music Academy</h2>
+                <p>Bangor, Maine</p>
+ 
+                <p>
+                    <strong>Phone:</strong>
+                    <a href="tel:207-555-0103">207-555-0103</a>
+                    <br>
+                    <strong>Email:</strong>
+                    <a href="mailto:daniel@riverbendmusic.example">daniel@riverbendmusic.example</a>
+                </p>
+ 
+                <h3><strong>Hours</strong></h3>
+                    <p>Monday-Thursday: 2:00 PM-8:00 PM 
+                        <br>Friday: 2:00 PM-6:00 PM 
+                        <br>Saturday: 9:00 AM-3:00 PM 
+                        <br>Sunday: Closed</p>
+               
+ 
+                <h3>Lesson inquiries</h3>
+                <p>Students or parents interested in lessons should contact Riverbend Music Academy by phone or email.
+                    When making an inquiry, please be prepared to provide:</p>
+                <ul>
+                    <li>Student name</li>
+                    <li>Age group</li>
+                    <li>Instrument of interest</li>
+                    <li>Current experience level</li>
+                    <li>Preferred lesson day</li>
+                    <li>General scheduling availability</li>
+                </ul>
+                <p>The academy will recommend an instructor and lesson length based on availability and student needs.</p>
+            </aside>
+ 
+            <!-- Interest form -->
+            <section class="contact-form">
+                <h2>Lesson interest form</h2>
+                <p class="form-note">Fields marked with * are required.</p>
+ 
+                <!-- Replace the action with your form service URL (see notes) -->
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
+ 
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="student-name">Student name *</label>
+                            <input type="text" id="student-name" name="student_name" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="age-group">Age group *</label>
+                            <select id="age-group" name="age_group" required>
+                                <option value="" disabled selected>Select one</option>
+                                <option>Child (under 10)</option>
+                                <option>Preteen (10&ndash;12)</option>
+                                <option>Teen (13&ndash;17)</option>
+                                <option>Adult (18+)</option>
+                            </select>
+                        </div>
+                    </div>
+ 
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="contact-name">Parent or guardian name</label>
+                            <input type="text" id="contact-name" name="parent_name">
+                        </div>
+                        <div class="field">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                    </div>
+ 
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel">
+                        </div>
+                        <div class="field">
+                            <label for="instrument">Instrument of interest *</label>
+                            <select id="instrument" name="instrument" required>
+                                <option value="" disabled selected>Select one</option>
+                                <option>Piano</option>
+                                <option>Guitar</option>
+                                <option>Voice</option>
+                                <option>Drums</option>
+                                <option>Violin</option>
+                                <option>Not sure yet</option>
+                            </select>
+                        </div>
+                    </div>
+ 
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="experience">Current experience level *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="" disabled selected>Select one</option>
+                                <option>Beginner (no experience)</option>
+                                <option>Some experience</option>
+                                <option>Intermediate</option>
+                                <option>Advanced</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="lesson-day">Preferred lesson day *</label>
+                            <select id="lesson-day" name="preferred_day" required>
+                                <option value="" disabled selected>Select one</option>
+                                <option>Monday</option>
+                                <option>Tuesday</option>
+                                <option>Wednesday</option>
+                                <option>Thursday</option>
+                                <option>Friday</option>
+                                <option>Saturday</option>
+                                <option>No preference</option>
+                            </select>
+                        </div>
+                    </div>
+ 
+                    <div class="field">
+                        <label for="availability">General scheduling availability</label>
+                        <textarea id="availability" name="availability" rows="4"
+                            placeholder="For example: weekdays after 4 PM, or Saturday mornings"></textarea>
+                    </div>
+ 
+                    <div class="field">
+                        <label for="message">Anything else we should know?</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+ 
+                    <button type="submit" class="button submit-button">Send inquiry</button>
+                </form>
+            </section>
+ 
+        </div>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2026 Riverbend Music Academy.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
