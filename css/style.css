@@ -5,7 +5,7 @@
 
 :root {
     --primary-color: #1B4B6E;
-    --secondary-color: #4A9B9B;
+    --secondary-color: #359191;
     --accent-color: #E8A94C;
     --background-color: #fef7ea;
     --text-color: #222222;
@@ -104,7 +104,7 @@ nav ul li a.button {
 }
 
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -112,7 +112,7 @@ nav ul li a.button {
 }
 
 .hero-image-about {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('MusicTogether.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/MusicTogether.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -120,7 +120,7 @@ nav ul li a.button {
 }
 
 .hero-image-lessons {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('TeachingPiano.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/TeachingPiano.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,7 +128,7 @@ nav ul li a.button {
 }
 
 .hero-image-instructors {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('instructor.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/instructor.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
