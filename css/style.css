@@ -5,7 +5,7 @@
 
 :root {
     --primary-color: #1B4B6E;
-    --secondary-color: #359191;
+    --secondary-color: #3C7C7C;
     --accent-color: #E8A94C;
     --background-color: #fef7ea;
     --text-color: #222222;
@@ -726,3 +726,140 @@ footer {
 }
 
 
+/* =========================
+   Mobile
+========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- (900px and below) ---------- */
+@media (max-width: 900px) {
+  section {
+    padding: 50px 0;
+  }
+
+  /* 3 columns -> 2 columns */
+  .lesson-cards,
+  .instructor-cards,
+  .lessons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact {
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .contact-main,
+  .contact-appointment {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* ---------- Phone (700px and below) ---------- */
+@media (max-width: 700px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+
+  nav {
+    align-items: center;
+  }
+
+  #logo {
+    max-width: 200px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px 10px;
+  }
+
+  nav ul li a {
+    padding: 10px 12px;
+  }
+
+  .hero-image,
+  .hero-image-about,
+  .hero-image-lessons,
+  .hero-image-instructors {
+    height: auto;
+    min-height: 360px;
+  }
+
+  .hero-text {
+    padding: 70px 20px;
+    gap: 14px;
+  }
+
+  .lesson-cards,
+  .instructor-cards,
+  .lessons-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .lessons-grid,
+  .card-grid {
+    margin: 30px auto;
+  }
+
+  .info-card-content ul,
+  .lesson-card-content ul {
+    columns: 1;
+  }
+
+  .info-card-content,
+  .lesson-card-content {
+    padding: 18px 20px 24px;
+  }
+
+  .text-intro,
+  .lesson-intro {
+    margin-bottom: 28px;
+  }
+
+  .page-header {
+    padding: 40px 20px;
+  }
+
+  .contact-page {
+    margin: 30px auto;
+    gap: 24px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+
+  .submit-button,
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a.button {
+    width: auto;
+  }
+}
