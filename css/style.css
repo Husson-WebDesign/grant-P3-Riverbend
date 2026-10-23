@@ -5,10 +5,12 @@
 
 :root {
     --primary-color: #1B4B6E;
-    --secondary-color: #2f7676;
+    --secondary-color: #1b6363;
     --accent-color: #E8A94C;
     --background-color: #fef7ea;
     --text-color: #222222;
+    --hero-overlay: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    --card-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
 }
 
 
@@ -17,6 +19,7 @@ body {
     line-height: 1.6;
     background-color: var(--background-color);
 }
+
 
 section {
   padding: 70px 0;
@@ -42,6 +45,11 @@ h2 {
     margin: 0 auto;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* =========================
    Navigation
 ========================= */
@@ -63,7 +71,6 @@ nav ul {
   display: flex;
   align-items: center;
   list-style-type: none;
-  margin: 0;
   padding: 10px;
 }
 
@@ -84,17 +91,6 @@ nav ul li a.button {
   padding: 10px 16px;
 }
 
-@media (max-width: 700px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav ul {
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
 
 /* =========================
    Hero
@@ -103,37 +99,22 @@ nav ul li a.button {
   padding: 0;
 }
 
-.hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
-}
-
-.hero-image-about {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/MusicTogether.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
-}
-
-.hero-image-lessons {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/TeachingPiano.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
-}
-
+#home { padding: 0; }
+ 
+.hero-image,
+.hero-image-about,
+.hero-image-lessons,
 .hero-image-instructors {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/instructor.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
 }
+ 
+.hero-image             { background-image: var(--hero-overlay), url('../images/hero.png'); }
+.hero-image-about       { background-image: var(--hero-overlay), url('../images/MusicTogether.jpg'); }
+.hero-image-lessons     { background-image: var(--hero-overlay), url('../images/TeachingPiano.jpg'); }
+.hero-image-instructors { background-image: var(--hero-overlay), url('../images/instructor.jpg'); }
 
 .hero-text {
   display: flex;
@@ -161,7 +142,8 @@ nav ul li a.button {
   color: var(--background-color);
 }
 
-.text-intro {
+.text-intro,
+.lesson-intro {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 40px auto;
@@ -177,11 +159,23 @@ nav ul li a.button {
   margin-bottom: 10px;
 }
 
+.lesson-intro .eyebrow { color: var(--accent-color); }
+
+article,
+.card,
+.lessons-cards {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* =========================
    Main Content
 ========================= */
 
-.card-grid {
+.card-grid,
+.lessons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
@@ -190,7 +184,15 @@ nav ul li a.button {
   padding: 0 5%;
 }
 
-.info-card {
+.lesson-cards,
+.instructor-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.info-card,
+.lesson-card {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -198,7 +200,24 @@ nav ul li a.button {
   box-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
 }
 
-.info-card-content {
+.info-card,
+.lesson-card,
+.instructor-card {
+  color: var(--text-color);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.info-card,
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card-content,
+.lesson-card-content {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -206,12 +225,20 @@ nav ul li a.button {
   text-align: center;
 }
 
-.info-card-content h3, .info-card-content h3 {
+.info-card-content h3, 
+.lesson-card-content h3 {
   color: var(--primary-color);
   margin-bottom: 12px;
 }
+.info-card-content p,
+.lesson-card-content p {
+  text-align: left;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
 
-.info-tags {
+.info-tags,
+.lesson-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -219,7 +246,8 @@ nav ul li a.button {
   margin-bottom: 16px;
 }
 
-.info-tags span {
+.info-tags span,
+.lesson-tags span {
   font-size: 0.78rem;
   padding: 4px 12px;
   border-radius: 20px;
@@ -227,13 +255,8 @@ nav ul li a.button {
   color: var(--primary-color);
 }
 
-.info-card-content p {
-  text-align: left;
-  font-size: 0.95rem;
-  margin-bottom: 14px;
-}
-
-.info-card-content ul {
+.info-card-content ul,
+.lesson-card-content ul {
   list-style: none;
   text-align: left;
   columns: 2;
@@ -241,7 +264,8 @@ nav ul li a.button {
   margin-bottom: 14px;
 }
 
-.info-card-content ul li {
+.info-card-content ul li,
+.lesson-card-content ul li {
   position: relative;
   padding-left: 18px;
   font-size: 0.9rem;
@@ -249,7 +273,8 @@ nav ul li a.button {
   break-inside: avoid;
 }
 
-.info-card-content ul li::before {
+.info-card-content ul li::before,
+.lesson-card-content ul li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -264,32 +289,9 @@ nav ul li a.button {
 
 #lessons {
   background-color: var(--primary-color);
-  color: #fef7ea;
+  color: var(--background-color);
 }
 
-.lesson-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px auto;
-}
-
-.lesson-intro .eyebrow {
-  color: var(--accent-color);
-}
-
-.lesson-cards, .instructor-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.lesson-card, .instructor-card {
-  color: #222222;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
 
 .lesson-card img {
   width: 100%;
@@ -307,9 +309,36 @@ nav ul li a.button {
   margin: 25px auto 0;
 }
 
-.lesson-card-content {
-  padding: 20px;
+.instructor-card .role {
+  text-align: center;
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
 }
+
+.instructor-card h4 {
+  text-align: left;
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin: 6px 0 8px;
+}
+
+.instructor-card blockquote {
+  text-align: left;
+  font-style: italic;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 14px;
+  margin: 0 0 14px;
+}
+
+.instructors-cta {
+  margin-top: 60px;
+  margin-bottom: 0;
+}
+
+/* =========================
+   Contact
+========================= */
 
 .contact {
   display: flex;
@@ -351,243 +380,10 @@ nav ul li a.button {
   margin-bottom: 6px;
 }
 
-
-.lessons-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin: 50px;
-}
-
-article, .card, .lessons-cards {
-  background-color: white;
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.lessons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 5%;
-}
-
-.lesson-card {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.lesson-card-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 18px 26px 28px;
-  text-align: center;
-}
-
-.lesson-card-content h3 {
-  color: var(--primary-color);
-  margin-bottom: 12px;
-}
-
-.lesson-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.lesson-tags span {
-  font-size: 0.78rem;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(27, 75, 110, 0.28);
-  color: var(--primary-color);
-}
-
-.lesson-card-content p {
-  text-align: left;
-  font-size: 0.95rem;
-  margin-bottom: 14px;
-}
-
-.lesson-card-content ul {
-  list-style: none;
-  text-align: left;
-  columns: 2;
-  column-gap: 18px;
-  margin-bottom: 14px;
-}
-
-.lesson-card-content ul li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-  break-inside: avoid;
-}
-
-.lesson-card-content ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--secondary-color);
-}
-
-/* =========================
-   Contact
-========================= */
-.contact-main {
-  flex: 1;
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contact-main h2,
-.contact-main h3 {
-  margin-bottom: 8px;
-}
-
-.contact-main a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.contact-appointment {
-  flex: 2;
-}
-
-.contact-appointment ul {
-  margin: 15px 0;
-  padding-left: 20px;
-}
-
-.contact-appointment li {
-  margin-bottom: 6px;
-}
-
-
-.lessons-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin: 50px;
-}
-
-article, .card, .lessons-cards {
-  background-color: white;
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.lessons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 5%;
-}
-
-.lesson-card {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.lesson-card-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 18px 26px 28px;
-  text-align: center;
-}
-
-.lesson-card-content h3 {
-  color: var(--primary-color);
-  margin-bottom: 12px;
-}
-
-.lesson-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.lesson-tags span {
-  font-size: 0.78rem;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(27, 75, 110, 0.28);
-  color: var(--primary-color);
-}
-
-.lesson-card-content p {
-  text-align: left;
-  font-size: 0.95rem;
-  margin-bottom: 14px;
-}
-
-.lesson-card-content ul {
-  list-style: none;
-  text-align: left;
-  columns: 2;
-  column-gap: 18px;
-  margin-bottom: 14px;
-}
-
-.lesson-card-content ul li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-  break-inside: avoid;
-}
-
-.lesson-card-content ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--secondary-color);
-}
-
-.page-header {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  text-align: center;
-  padding: 60px 20px;
-}
- 
 .page-header p {
   max-width: 600px;
   margin: 12px auto 0;
 }
- 
 
 .contact-page {
   display: grid;
@@ -598,27 +394,24 @@ article, .card, .lessons-cards {
   margin: 60px auto;
   padding: 0 5%;
 }
- 
 
 .contact-info {
   background-color: var(--accent-color);
   color: var(--text-color);
   border-radius: 10px;
   padding: 28px;
-  box-shadow: 0 3px 12px rgba(27, 75, 110, 0.12);
+  box-shadow: var(--card-shadow);
 }
  
 .contact-info h2 { margin-bottom: 4px; font-size: 1.6rem; }
 .contact-info h3 { margin: 22px 0 8px; }
-.contact-info p { margin-bottom: 12px; }
+.contact-info p  { margin-bottom: 12px; }
+.contact-info ul { margin: 0 0 12px 20px; }
+.contact-info li { margin-bottom: 4px; }
  
 .contact-info a {
   color: var(--text-color);
   overflow-wrap: anywhere;
-}
- 
-.contact-info ul {
-  margin: 0 0 12px 20px;
 }
  
 .contact-info li { margin-bottom: 4px; }
@@ -705,14 +498,6 @@ article, .card, .lessons-cards {
   margin-top: 4px;
 }
  
-@media (max-width: 900px) {
-  .contact-page {
-    grid-template-columns: 1fr;
-    margin: 30px auto;
-  }
- 
-  .contact-form { order: -1; }
-}
 
 /* =========================
    Footer
@@ -862,4 +647,25 @@ img {
   nav ul li a.button {
     width: auto;
   }
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--background-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 10px 16px;
+}
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .nav-toggle { display: block; }
+  nav ul { display: none; }
+  nav ul.open { display: flex; }
 }
