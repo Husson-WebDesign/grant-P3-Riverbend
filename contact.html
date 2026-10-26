@@ -72,11 +72,17 @@
             <section class="contact-form">
                 <h2>Lesson interest form</h2>
                 <p class="form-note">Fields marked with * are required.</p>
+
+
+                <form id="lesson-interest-form" novalidate>
+                    <div id="form-success" class="form-success" role="status" aria-live="polite" tabindex="-1" hidden></div>
+                    <p id="form-error-summary" class="form-error-summary" role="alert" hidden>Please correct the highlighted fields and try again.</p>
  
                     <div class="form-row">
                         <div class="field">
                             <label for="student-name">Student name *</label>
-                            <input type="text" id="student-name" name="student_name" autocomplete="name" required>
+                             <input type="text" id="student-name" name="student_name" autocomplete="name" aria-describedby="student-name-error" required>
+                            <p class="error-message" id="student-name-error"></p>
                         </div>
                         <div class="field">
                             <label for="age-group">Age group *</label>
@@ -87,6 +93,7 @@
                                 <option>Teen (13&ndash;17)</option>
                                 <option>Adult (18+)</option>
                             </select>
+                             <p class="error-message" id="age-group-error"></p>
                         </div>
                     </div>
  
@@ -97,7 +104,8 @@
                         </div>
                         <div class="field">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" autocomplete="email" required>
+                             <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+                            <p class="error-message" id="email-error"></p>
                         </div>
                     </div>
  
@@ -117,6 +125,7 @@
                                 <option>Violin</option>
                                 <option>Not sure yet</option>
                             </select>
+                            <p class="error-message" id="instrument-error"></p>
                         </div>
                     </div>
  
@@ -130,6 +139,7 @@
                                 <option>Intermediate</option>
                                 <option>Advanced</option>
                             </select>
+                             <p class="error-message" id="experience-error"></p>
                         </div>
                         <div class="field">
                             <label for="lesson-day">Preferred lesson day *</label>
@@ -143,6 +153,7 @@
                                 <option>Saturday</option>
                                 <option>No preference</option>
                             </select>
+                              <p class="error-message" id="lesson-day-error"></p>
                         </div>
                     </div>
  
