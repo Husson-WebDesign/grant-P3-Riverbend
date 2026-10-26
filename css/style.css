@@ -385,6 +385,13 @@ article,
   margin-bottom: 6px;
 }
 
+.page-header {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-align: center;
+  padding: 60px 20px;
+}
+
 .page-header p {
   max-width: 600px;
   margin: 12px auto 0;
