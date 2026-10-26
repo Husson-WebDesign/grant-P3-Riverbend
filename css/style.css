@@ -5,7 +5,7 @@
 
 :root {
     --primary-color: #1B4B6E;
-    --secondary-color: #1b6363;
+    --secondary-color: #2a9191;
     --accent-color: #E8A94C;
     --background-color: #fef7ea;
     --text-color: #222222;
@@ -154,7 +154,7 @@ nav ul li a.button {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.8rem;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -298,6 +298,11 @@ article,
   height: 180px;
   object-fit: cover;
   display: block;
+}
+
+.info-card-content .button {
+  margin-top: auto;
+  align-self: center;
 }
 
 .instructor-card img {
