@@ -174,6 +174,78 @@ article,
    Main Content
 ========================= */
 
+/* ---------- Getting started steps ---------- */
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  counter-reset: step;
+  margin-top: 30px;
+}
+
+.step {
+  counter-increment: step;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 44px 26px 28px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+.step::before {
+  content: counter(step);
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.step h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.step-link {
+  margin-top: auto; /* keeps the three links lined up even if the text lengths differ */
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.step-link:hover,
+.step-link:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 30px auto 0;
+    gap: 44px; /* leaves room for the number badges */
+  }
+}
+
 .card-grid,
 .lessons-grid {
   display: grid;
@@ -184,12 +256,35 @@ article,
   padding: 0 5%;
 }
 
-.lesson-cards,
-.instructor-cards {
+.lesson-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
+
+.instructor-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.instructor-details { text-align: center; }
+
+.instructor-details summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--primary-color);
+  padding: 10px 0;
+}
+
+.instructor-details summary:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.instructor-details[open] summary { margin-bottom: 8px; }
 
 .info-card,
 .lesson-card {
@@ -680,3 +775,4 @@ img {
   nav ul { display: none; }
   nav ul.open { display: flex; }
 }
+
