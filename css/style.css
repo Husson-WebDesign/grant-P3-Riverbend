@@ -53,12 +53,18 @@ img {
 /* =========================
    Navigation
 ========================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary-color);
+  
 }
 
 #logo {
@@ -111,7 +117,7 @@ nav ul li a.button {
   height: 500px;
 }
  
-.hero-image             { background-image: var(--hero-overlay), url('../images/hero.png'); }
+.hero-image             { background-image: var(--hero-overlay), url('../images/hero.jpg'); }
 .hero-image-about       { background-image: var(--hero-overlay), url('../images/MusicTogether.jpg'); }
 .hero-image-lessons     { background-image: var(--hero-overlay), url('../images/TeachingPiano.jpg'); }
 .hero-image-instructors { background-image: var(--hero-overlay), url('../images/instructor.jpg'); }
@@ -141,6 +147,17 @@ nav ul li a.button {
   background: var(--secondary-color);  
   color: var(--background-color);
 }
+
+ .button.button-secondary {
+     background: transparent;
+     color: white;
+     border: 2px solid white;
+     padding: 10px 16px;
+   }
+   .button.button-secondary:hover {
+     background: white;
+     color: var(--primary-color);
+   }
 
 .text-intro,
 .lesson-intro {
@@ -434,6 +451,89 @@ article,
 .instructors-cta {
   margin-top: 60px;
   margin-bottom: 0;
+}
+
+
+/* =========================
+   About Page
+========================= */
+
+.story-alt {
+  background-color: white;
+}
+
+.story-inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.story h2 {
+  color: var(--primary-color);
+  margin-bottom: 18px;
+}
+
+.story p {
+  margin-bottom: 16px;
+}
+
+.story-inner > :last-child {
+  margin-bottom: 0;
+}
+
+.story ul {
+  list-style: none;
+  margin: 0 0 16px;
+}
+
+.story ul li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 8px;
+}
+
+.story ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+}
+
+.story blockquote {
+  font-style: italic;
+  font-size: 1.15rem;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 18px;
+  margin: 24px 0;
+}
+
+.story blockquote footer {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--primary-color);
+  background: none;
+  padding: 6px 0 0;
+  text-align: left;
+}
+
+#approach .card-grid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.cta-buttons .button {
+  margin-top: 0;
 }
 
 /* =========================
