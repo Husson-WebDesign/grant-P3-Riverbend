@@ -71,3 +71,15 @@ if (form) {
     });
   });
 }
+
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get('instrument');
+  if (requested) {
+    const instrumentSelect = document.querySelector('#instrument');
+    const match = Array.from(instrumentSelect.options).find(
+      (option) => option.text.toLowerCase() === requested.toLowerCase()
+    );
+    if (match) {
+      instrumentSelect.value = match.text;
+    }
+  }
